@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF4491"
+		},
+		"LS ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS ADLS'"
+		},
+		"ON PREM SQL SERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ON PREM SQL SERVER'"
+		},
+		"LS ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://saadlsproject4491.dfs.core.windows.net/"
+		},
+		"ON PREM SQL SERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "SWAPNIL\\SQLEXPRESS"
+		},
+		"ON PREM SQL SERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT2017"
+		},
+		"ON PREM SQL SERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Swapnil Manohar"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF4491_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS ADLS_accountKey": {
+						"value": "[parameters('LS ADLS_accountKey')]"
+					},
+					"ON PREM SQL SERVER_password": {
+						"value": "[parameters('ON PREM SQL SERVER_password')]"
+					},
+					"LS ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS ADLS_properties_typeProperties_url')]"
+					},
+					"ON PREM SQL SERVER_properties_typeProperties_server": {
+						"value": "[parameters('ON PREM SQL SERVER_properties_typeProperties_server')]"
+					},
+					"ON PREM SQL SERVER_properties_typeProperties_database": {
+						"value": "[parameters('ON PREM SQL SERVER_properties_typeProperties_database')]"
+					},
+					"ON PREM SQL SERVER_properties_typeProperties_userName": {
+						"value": "[parameters('ON PREM SQL SERVER_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
