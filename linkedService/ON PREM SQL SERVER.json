@@ -1,0 +1,21 @@
+{
+	"name": "ON PREM SQL SERVER",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "SWAPNIL\\SQLEXPRESS",
+			"database": "AdventureWorksLT2017",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "Windows",
+			"userName": "Swapnil Manohar",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmYWNjNGZhZC04MjM3LTQyZWYtYTFjYi0zMzRmYjdkM2U2MDMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SELF-HOSTED-INTEGRATION-RUNTIME",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
