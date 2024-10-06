@@ -36,10 +36,10 @@
 			"value": "swapnil"
 		},
 		"TWT_properties_pipeline_parameters_startTime": {
-			"value": "@trigger.outputs.WindowStartTime"
+			"value": "@trigger().outputs.windowStartTime"
 		},
 		"TWT_properties_pipeline_parameters_endTime": {
-			"value": "@trigger.outputs.WindowEndTime"
+			"value": "@trigger().outputs.windowEndTime"
 		}
 	}
 }
