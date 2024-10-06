@@ -19,10 +19,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SQL DB'"
 		},
-		"SQL SERVER_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'SQL SERVER'"
-		},
 		"LS ADLS_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://saadlsproject4491.dfs.core.windows.net/"
@@ -51,9 +47,13 @@
 			"type": "string",
 			"defaultValue": "swapnil"
 		},
-		"SQL SERVER_properties_typeProperties_url": {
+		"TWT_properties_pipeline_parameters_startTime": {
 			"type": "string",
-			"defaultValue": "https://saadlsproject4491.dfs.core.windows.net/"
+			"defaultValue": "@trigger.outputs.WindowStartTime"
+		},
+		"TWT_properties_pipeline_parameters_endTime": {
+			"type": "string",
+			"defaultValue": "@trigger.outputs.WindowEndTime"
 		},
 		"containerUri": {
 			"type": "string",
@@ -88,9 +88,6 @@
 					"SQL DB_password": {
 						"value": "[parameters('SQL DB_password')]"
 					},
-					"SQL SERVER_accountKey": {
-						"value": "[parameters('SQL SERVER_accountKey')]"
-					},
 					"ON PREM SQL SERVER_password": {
 						"value": "[parameters('ON PREM SQL SERVER_password')]"
 					},
@@ -106,9 +103,6 @@
 					"SQL DB_properties_typeProperties_userName": {
 						"value": "[parameters('SQL DB_properties_typeProperties_userName')]"
 					},
-					"SQL SERVER_properties_typeProperties_url": {
-						"value": "[parameters('SQL SERVER_properties_typeProperties_url')]"
-					},
 					"ON PREM SQL SERVER_properties_typeProperties_server": {
 						"value": "[parameters('ON PREM SQL SERVER_properties_typeProperties_server')]"
 					},
@@ -117,6 +111,12 @@
 					},
 					"ON PREM SQL SERVER_properties_typeProperties_userName": {
 						"value": "[parameters('ON PREM SQL SERVER_properties_typeProperties_userName')]"
+					},
+					"TWT_properties_pipeline_parameters_startTime": {
+						"value": "[parameters('TWT_properties_pipeline_parameters_startTime')]"
+					},
+					"TWT_properties_pipeline_parameters_endTime": {
+						"value": "[parameters('TWT_properties_pipeline_parameters_endTime')]"
 					}
 				}
 			},

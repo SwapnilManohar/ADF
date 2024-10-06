@@ -14,9 +14,6 @@
 		"SQL DB_password": {
 			"value": ""
 		},
-		"SQL SERVER_accountKey": {
-			"value": ""
-		},
 		"LS ADLS_properties_typeProperties_url": {
 			"value": "https://saadlsproject4491.dfs.core.windows.net/"
 		},
@@ -38,8 +35,11 @@
 		"SQL DB_properties_typeProperties_userName": {
 			"value": "swapnil"
 		},
-		"SQL SERVER_properties_typeProperties_url": {
-			"value": "https://saadlsproject4491.dfs.core.windows.net/"
+		"TWT_properties_pipeline_parameters_startTime": {
+			"value": "@trigger.outputs.WindowStartTime"
+		},
+		"TWT_properties_pipeline_parameters_endTime": {
+			"value": "@trigger.outputs.WindowEndTime"
 		}
 	}
 }
